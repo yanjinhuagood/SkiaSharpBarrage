@@ -1,33 +1,32 @@
 ﻿<wpfdev:Window x:Class="SkiaSharpBarrage.MainWindow"
-              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-              xmlns:wpfdev="https://github.com/WPFDevelopersOrg/WPFDevelopers"
-              xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
-              xmlns:local="clr-namespace:SkiaSharpBarrage"
-              mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-              ResizeMode="CanMinimize"
-              Title="SkiaSharpBarrage - 弹幕篇" Height="450" Width="800">
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:wpfdev="https://github.com/WPFDevelopersOrg/WPFDevelopers"
+               xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
+               mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+               ResizeMode="CanMinimize"
+               Title="SkiaSharpBarrage - 弹幕篇" Height="450" Width="800">
     <Grid Margin="4">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <MediaElement Stretch="Uniform" Grid.RowSpan="2"
-                      Name="myMediaElement"></MediaElement>
+                      Name="myMediaElement" />
         <skia:SKElement x:Name="skElement" />
         <Grid Grid.Row="1" Name="MyGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBox wpfdev:ElementHelper.IsWatermark="True"
                      x:Name="tbBarrage"
-                     wpfdev:ElementHelper.Watermark="请弹幕内容"/>
+                     wpfdev:ElementHelper.Watermark="请弹幕内容" />
             <Button Grid.Column="1" Style="{StaticResource PrimaryButton}"
-                    Content="发射弹幕" Margin="4,0,0,0" 
-                    Click="ButtonBase_OnClick"/>
+                    Content="发射弹幕" Margin="4,0,0,0"
+                    Click="ButtonBase_OnClick" />
         </Grid>
     </Grid>
 </wpfdev:Window>

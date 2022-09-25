@@ -21,13 +21,15 @@ namespace SkiaSharpBarrage
 
         public MainWindow()
         {
-            list.Add("2333");
-            list.Add("测试弹幕公众号：WPF开发者");
-            list.Add("很难开心");
-            list.Add("LOL~");
-            list.Add("青春记忆");
+            list.Add("WPF开发者");
+            list.Add("有志者事竟成也！");
             list.Add("bing");
+            list.Add("人无善志，虽勇必伤。");
             list.Add("Microsoft");
+            list.Add("只有在人群中间，才能认识自己。");
+            list.Add("一思尚存，此志不懈。");
+            list.Add("奢侈是舒适的，否则就不是奢侈。");
+            list.Add("形成天才的决定因素应该是勤奋。");
             InitializeComponent();
             var index = SKFontManager.Default.FontFamilies.ToList().IndexOf("微软雅黑");
             _font = SKFontManager.Default.GetFontStyles(index).CreateTypeface(0);
@@ -64,7 +66,13 @@ namespace SkiaSharpBarrage
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            _barrage.AddBarrage(tbBarrage.Text);
+            var _random = new Random();
+            var msg = string.Empty;
+            if (string.IsNullOrWhiteSpace(tbBarrage.Text))
+                msg = list[_random.Next(0, list.Count)];
+            else
+                msg = tbBarrage.Text;
+            _barrage.AddBarrage(msg);
         }
     }
 }
